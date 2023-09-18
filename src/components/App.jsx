@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { SearchBar } from 'components';
+import { ImageGallery, SearchBar } from 'components';
 
 export class App extends Component {
   state = {
@@ -12,6 +12,11 @@ export class App extends Component {
 
   render() {
     const { searchQuery } = this.state;
-    return <SearchBar onSubmit={this.handleSearch} />;
+    return (
+      <>
+        <SearchBar onSubmit={this.handleSearch} />
+        <ImageGallery />
+      </>
+    );
   }
 }
