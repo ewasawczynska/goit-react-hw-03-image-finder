@@ -3,10 +3,6 @@ import { fetchImagesWithQuery } from 'services/api';
 import { Button, ImageGalleryItem, Loader, Modal } from 'components';
 
 export class ImageGallery extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   state = {
     images: [],
     isLoading: false,
@@ -22,7 +18,7 @@ export class ImageGallery extends Component {
 
     if (this.props.searchQuery !== prevProps.searchQuery) {
       this.setState({ images: [], page: 1 }, () => {
-        this.fetchImagesWithQuery(query, 1);
+        this.fetchImages(query, 1);
       });
     }
 
@@ -31,7 +27,7 @@ export class ImageGallery extends Component {
     }
   }
 
-  async fetchImagesWithQuery(query, page) {
+  async fetchImages(query, page) {
     this.setState({ isLoading: true });
     try {
       const response = await fetchImagesWithQuery(query, page);
@@ -52,7 +48,7 @@ export class ImageGallery extends Component {
   async loadMoreImages(query, page) {
     this.setState({ isLoading: true });
     try {
-      const response = await this.loadMoreImages(query, page);
+      const response = await fetchImagesWithQuery(query, page);
       const data = response.data.hits;
       this.setState(prevState => ({ images: [...prevState.images, ...data] }));
     } catch (error) {

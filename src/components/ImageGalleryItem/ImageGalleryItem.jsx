@@ -14,6 +14,7 @@ export const ImageGalleryItem = props => {
         src={webformatURL}
         alt={tags}
         onClick={imageClick}
+        loading="lazy"
       />
     </li>
   );

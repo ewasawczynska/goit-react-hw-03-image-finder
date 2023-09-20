@@ -1,28 +1,16 @@
 import PropTypes from 'prop-types';
+import { SearchForm } from 'components';
+import { StyledHeader } from './SearchBar.styled';
 
 export const SearchBar = ({ onSubmit }) => {
-  const handleSubmit = e => {
-    e.preventDefault();
-    const query = e.target.value;
+  const handleSubmit = query => {
     onSubmit(query);
   };
 
   return (
-    <header className="searchbar">
-      <form className="searchbar__form" onSubmit={handleSubmit}>
-        <button type="submit" className="searchbar__button">
-          <span className="searchbar__button--label">Search</span>
-        </button>
-
-        <input
-          className="searchbar__input"
-          type="text"
-          autoComplete="off"
-          autoFocus
-          placeholder="Search images and photos"
-        />
-      </form>
-    </header>
+    <StyledHeader>
+      <SearchForm onSubmit={handleSubmit} />
+    </StyledHeader>
   );
 };
 
