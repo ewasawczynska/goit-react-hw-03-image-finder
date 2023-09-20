@@ -14,7 +14,7 @@ export class ImageGallery extends Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-    const { images, page } = this.state;
+    const { page } = this.state;
     const query = this.props.searchQuery;
 
     if (this.props.searchQuery !== prevProps.searchQuery) {
