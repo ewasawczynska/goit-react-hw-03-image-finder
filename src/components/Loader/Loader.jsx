@@ -12,7 +12,7 @@ export const Loader = () => {
         wrapperStyle={{}}
         wrapperClass="MagnifyingGlass-wrapper"
         glassColor="#c0efff"
-        color="#e15b64"
+        color="#3f51b5"
       />
     </Container>
   );

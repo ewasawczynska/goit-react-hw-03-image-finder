@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import { fetchImagesWithQuery } from 'services/api';
 import { Button, ImageGalleryItem, Loader, Modal } from 'components';
+import '../../styles.css';
 
 export class ImageGallery extends Component {
   state = {
@@ -74,7 +75,7 @@ export class ImageGallery extends Component {
     const { images, isLoading, page, selectedImage, totalPages } = this.state;
     return (
       <>
-        <ul className="gallery">
+        <ul className="ImageGallery">
           {images.map(({ id, ...rest }) => (
             <ImageGalleryItem key={id} {...rest} onClick={this.openModal} />
           ))}

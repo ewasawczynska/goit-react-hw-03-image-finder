@@ -1,10 +1,14 @@
 import PropTypes from 'prop-types';
+import { Container } from 'components/Container';
+import '../../styles.css';
 
 export const Button = ({ onClick, children }) => {
   return (
-    <button className="button" type="button" onClick={onClick}>
-      {children}
-    </button>
+    <Container>
+      <button className="Button" type="button" onClick={onClick}>
+        {children}
+      </button>
+    </Container>
   );
 };
 

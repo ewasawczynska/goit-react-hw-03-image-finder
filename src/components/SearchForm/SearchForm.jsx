@@ -1,10 +1,5 @@
-import {
-  StyledForm,
-  StyledFormButton,
-  StyledInput,
-  StyledLabel,
-} from './SearchForm.styled';
 import PropTypes from 'prop-types';
+import '../../styles.css';
 
 export const SearchForm = ({ onSubmit }) => {
   const handleSubmit = e => {
@@ -14,18 +9,19 @@ export const SearchForm = ({ onSubmit }) => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
-      <StyledFormButton type="submit">
-        <StyledLabel>Search</StyledLabel>
-      </StyledFormButton>
-      <StyledInput
+    <form className="SearchForm" onSubmit={handleSubmit}>
+      <button className="SearchForm-button" type="submit">
+        <span className="SearchForm-button-label">Search</span>
+      </button>
+      <input
+        className="SearchForm-input"
         name="searchQuery"
         type="text"
         autoComplete="off"
         autoFocus
         placeholder="Search images and photos"
       />
-    </StyledForm>
+    </form>
   );
 };
 

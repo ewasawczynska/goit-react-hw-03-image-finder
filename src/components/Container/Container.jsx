@@ -1,8 +1,8 @@
-import { StyledContainer } from './Container.styled';
 import PropTypes from 'prop-types';
+import '../../styles.css';
 
 export default function Container({ children }) {
-  return <StyledContainer>{children}</StyledContainer>;
+  return <div className="Container">{children}</div>;
 }
 
 Container.propTypes = {

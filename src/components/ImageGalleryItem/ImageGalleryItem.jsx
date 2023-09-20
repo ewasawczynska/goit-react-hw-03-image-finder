@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../../styles.css';
 
 export const ImageGalleryItem = props => {
   const { webformatURL, largeImageURL, tags, onClick } = props;
@@ -8,9 +9,9 @@ export const ImageGalleryItem = props => {
   };
 
   return (
-    <li className="gallery__item" data-url={largeImageURL}>
+    <li className="ImageGalleryItem" data-url={largeImageURL}>
       <img
-        className="gallery__image"
+        className="ImageGalleryItem-image"
         src={webformatURL}
         alt={tags}
         onClick={imageClick}

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { SearchForm } from 'components';
-import { StyledHeader } from './SearchBar.styled';
+import '../../styles.css';
 
 export const SearchBar = ({ onSubmit }) => {
   const handleSubmit = query => {
@@ -8,9 +8,9 @@ export const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <StyledHeader>
+    <header className="Searchbar">
       <SearchForm onSubmit={handleSubmit} />
-    </StyledHeader>
+    </header>
   );
 };
 

@@ -2,8 +2,8 @@ import PropTypes from 'prop-types';
 
 export const Modal = ({ largeImageURL, tags, onClick }) => {
   return (
-    <div className="modal__overlay">
-      <div className="modal__window">
+    <div className="Overlay">
+      <div className="Modal">
         <img
           className="modal__image"
           src={largeImageURL}
